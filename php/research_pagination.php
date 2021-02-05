@@ -285,10 +285,8 @@
 
                 $totalPage = ceil($totalRecords/$limit);
 
-                echo '<div class="container row mt-5">';
-                
-                echo "<div class='col'>";
-                echo "<ul class='pagination'>";
+                // Remove divs
+                echo "<ul class='pagination justify-content-center mt-5'>";
 
                 for ($i=1; $i <= $totalPage; $i++) { 
                   if ($i == $page_no) {
@@ -297,40 +295,33 @@
                   $active = "";
                   }
 
-                  if ($i == 1){
-                  
-                    echo "<li class='page-item'><a class='fa fa-angle-double-left page-link' style='font-size:20px;' data-toggle='tooltip' title='First page' id='$i' href=''></a></li>";
-                    // prev button not working
-                    echo "<li class='page-item'><a class='fa fa-angle-left page-link' style='font-size:20px;' data-toggle='tooltip' title='Previous' id='$i' href=''></a></li>";
-                    echo "<li class='page-item $active'><a class='page-link' id='$i' href=''>$i</a></li>";
-                    
 
-                  }else if($i > 1 && $i < $totalPage){
-
-                    
-                    echo "<li class='page-item $active'><a class='page-link' id='$i' href=''>$i</a></li>";
-                  }else if($i == $totalPage){
-
-                    echo "<li class='page-item $active'><a class='page-link' id='$i' href=''>$i</a></li>";
-                    // next button not working
-                    echo "<li class='page-item'><a class='fa fa-angle-right page-link' style='font-size:20px;' data-toggle='tooltip' title='Next' id='$i' href=''></a></li>";
-                    echo "<li class='page-item'><a class='fa fa-angle-double-right page-link' style='font-size:20px;' data-toggle='tooltip' title='Last page' id='$i' href=''></a></li>";
                   }
                    
-                }
+                // Pagination modified
+
+                // Last page
+                echo "<li class='page-item'><a class='fa fa-angle-double-left page-link' data-toggle='tooltip' title='Last page' id='$i' href=''></a></li>";
+
+                // Prev
+                echo "<li class='page-item'><a class='fa fa-angle-left page-link' data-toggle='tooltip' title='Next' id='$i' href=''></a></li>";
+
+                // Input
+                echo "<li class='page-item'><p class='px-3'>Page: <input type='number' min='1' max='7' data-toggle='tooltip' title='Press Enter to go to page' value='1'></input> of 7</p></li>";
+
+                // Next
+                echo "<li class='page-item'><a class='fa fa-angle-right page-link' data-toggle='tooltip' title='Next' id='$i' href=''></a></li>";
+                // Last page
+                echo "<li class='page-item'><a class='fa fa-angle-double-right page-link' data-toggle='tooltip' title='Last page' id='$i' href=''></a></li>";
 
 
 
 
                 echo "</ul>";
-                echo "</div>";
 
-                // Pagination on-progress
 
                 
 
-                // container
-                echo '</div>';
               ?>
 
               <?php } else {
