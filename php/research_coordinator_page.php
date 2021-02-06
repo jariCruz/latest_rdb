@@ -340,6 +340,8 @@ if (isset($_GET['query'])) {
 
             </ul>
 
+            
+
 
             <!-- padding -->
         </div>
@@ -413,28 +415,125 @@ if (isset($_GET['query'])) {
                                     </div>
 
 
+                                    <!-- Author added -->
+                                    <!-- Manage author count added -->
+                                    <label for="form_author1_fname">Author:&ThickSpace;
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" title="Append author (maximum of 6)" onclick="appendAuthor()">+</button>
+                                        <button type="button" class="btn btn-outline-danger" data-toggle="tooltip" title="Remove author (minimum of 1)" onclick="removeAuthor()">&ThinSpace;–&ThinSpace;</button>
+                                    </label>
+
                                     <!-- Author field -->
+                                    <div id="PET-author">
+                                        <div class="form-row" id="author-set">
+                                            
+                                            <!-- Forename field -->
 
-                                    <div class="form-group">
-                                        <label for="form_author">Author:</label>
-                                        <input type="text" name="form_author" id="form_author" placeholder="Author" 
-                                        class="form-control" minlength="5" maxlength="100" required>
-                                        <div id="research-author-valid" class="invalid-feedback">Please fill out this field.</div>
-                                        <div id="research-author-invalid" class="valid-feedback"></div>
+                                            <div class="form-group col-sm-5"> 
 
+                                                <input type="text"
+                                                        class="form-control"
+                                                        placeholder="Forename"
+                                                        name="form_author_fname"
+                                                        minlength="2"
+                                                        maxlength="30"
+                                                        required>                    
+                                                <div id="research-author-fname-valid" class="invalid-feedback">Please fill out this field.</div>
+                                                <div id="research-author-fname-invalid" class="valid-feedback"></div>
+
+                                            </div>
+
+                                            <!-- Middle initial field -->
+
+                                            <div class="form-group col-sm-2">
+
+                                                <input type="text"
+                                                        name="form_author_mi"
+                                                        placeholder="M.I."
+                                                        class="form-control"
+                                                        maxlength="5">
+                                                <div id="research-author-mi-valid" class="invalid-feedback">Please fill out this field.</div>
+                                                <div id="research-author-mi-invalid" class="valid-feedback"></div>
+
+                                            </div>
+
+                                            <!-- Surname field -->
+
+                                            <div class="form-group col-sm-5">
+
+                                                <input type="text"
+                                                        name="form_author_sname"
+                                                        placeholder="Surname"
+                                                        class="form-control"
+                                                        maxlength="30"
+                                                        minlength="1"
+                                                        required>
+                                                <div id="research-author-sname-valid" class="invalid-feedback">Please fill out this field.</div>
+                                                <div id="research-author-sname-invalid" class="valid-feedback"></div>
+                                            </div>
+
+                                        </div>
                                     </div>
+
+
+                                    <!-- Adviser field modified-->
 
                                     <!-- Adviser field -->
 
-                                    <div class="form-group">
+                                    <label for="form_adviser">Adviser:</label>
+                                    <div class="form-row">
+                                            
+                                            <!-- Forename field -->
 
-                                        <label for="form_adviser">Adviser:</label>
-                                        <input type="text" name="form_adviser" id="form_adviser" placeholder="Adviser" 
-                                        class="form-control" maxlength="60" minlength="5"required>
-                                        <div id="research-adviser-valid" class="invalid-feedback">Please fill out this field.</div>
-                                        <div id="research-adviser-invalid" class="valid-feedback"></div>
+                                            <div class="form-group col-sm-5"> 
 
-                                    </div>
+                                                <input type="text"
+                                                        class="form-control"
+                                                        placeholder="Forename"
+                                                        id="form_adviser_fname"
+                                                        name="form_author_fname"
+                                                        minlength="2"
+                                                        maxlength="30"
+                                                        required>
+                                                
+                                                <div id="research-adviser-valid" class="invalid-feedback">Please fill out this field.</div>
+                                                <div id="research-adviser-invalid" class="valid-feedback"></div>                  
+
+                                            </div>
+
+                                            <!-- Middle initial field -->
+
+                                            <div class="form-group col-sm-2">
+
+                                                <input type="text"
+                                                        id="form_adviser_mi"
+                                                        name="form_author_mi"
+                                                        placeholder="M.I."
+                                                        class="form-control"
+                                                        maxlength="5">
+
+                                                <div id="research-adviser-mi-valid" class="invalid-feedback">Please fill out this field.</div>
+                                                <div id="research-adviser-mi-invalid" class="valid-feedback"></div>
+
+                                            </div>
+
+                                            <!-- Surname field -->
+
+                                            <div class="form-group col-sm-5">
+
+                                                <input type="text"
+                                                        name="form_adviser_sname"
+                                                        placeholder="Surname"
+                                                        id="form_adviser_sname"
+                                                        class="form-control"
+                                                        maxlength="30"
+                                                        minlength="1"
+                                                        required>
+
+                                                    <div id="research-adviser-sname-valid" class="invalid-feedback">Please fill out this field.</div>
+                                                    <div id="research-adviser-sname-invalid" class="valid-feedback"></div>
+                                            </div>
+
+                                        </div>
 
 
                                     <!-- Year level field -->
@@ -758,9 +857,12 @@ if (isset($_GET['query'])) {
     <script src="../js/verifyAccount.js"></script>
     <script src="../js/registration_admin_script.js"></script>
     <script src="../js/login.js"></script>
-    <script src="../js/readAbstract_function.js"></script>
+    <script         console.log(authorCount);src="../js/readAbstract_function.js"></script>
     <script src="../js/pagination.js"></script>
     <script src="../js/needToLogin.js"></script>
+    <script src="../js/manageAuthorCount_script.js"></script>
+    <!-- Add script for managing author -->
+
 </body>
 
 </html>
