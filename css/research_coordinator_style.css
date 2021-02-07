@@ -99,4 +99,38 @@ display: none;
 /* Read more */
 #readMore {
   display: none;
-} 
+}
+
+
+/******************************
+*   Research pagination page  *
+******************************/
+
+/*table style*/
+
+td + td {
+    width: 100%;
+}
+
+.first-border-top {
+
+  border-top: 1px double #0275d8 !important;
+}
+
+.last-border-bottom {
+
+  border-bottom: 1px double #0275d8 !important;
+}
+
+.td-style {
+
+  background-color: #f2f2f2;
+  border-right: 1px double #0275d8 !important;
+}
+
+/* hr in filter department */
+
+.sm-show {
+
+  display: none;
+}

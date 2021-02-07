@@ -31,7 +31,8 @@
   <div class="row">
 
       <!-- first column -->
-      <div class="col-sm-3 pl-4 pt-4 sm-hide">
+      <!-- sm-hide remove -->
+      <div class="col-sm-3 pl-4 pt-4">
 
         <p><?php if (mysqli_num_rows($count_result) > 0) {
               echo mysqli_num_rows($count_result);
@@ -48,26 +49,14 @@
                 <label>Filter Department:</label>
     
                 <br>
-                <div class="ml-3">
-                    <input type="checkbox" id="title">
-                    <label for="#title">Title</label>
-    
-                    <br>
-    
-                    <input type="checkbox" id="keyword">
-                    <label for="#keyword">Keyword</label>
-    
-                    <br>
-    
-                    <input type="checkbox" id="abstract">
-                    <label for="#abstract">Abstract</label>
-    
-                    <br>
-                    
-                    <input type="checkbox" id="content">
-                    <label for="#content">Content</label>
-                </div>
+
+                <!-- Checkboxes removed -->
+                <!-- select tag here -->
+
         <?php } ?>
+
+        <!-- hr added -->
+        <hr class="sm-show">
 
         <!-- first column -->
       </div>
@@ -75,21 +64,24 @@
       <!-- Content -->
       <div class="col">
 
-        <div class="d-flex align-items-center justify-content-center pt-2 sm-hide">
+        <!-- sm-hide remove and change padding top to 3 -->
+
+        <div class="d-flex align-items-center justify-content-center pt-3">
 
 
           <!-- Use the 'active class' to change the btn color -->
           <?php if (mysqli_num_rows($count_result) > 0) { ?>
             <!-- btn-group change to nav -->
-            <ul class="nav nav-pills" role="tablist">
+            <!-- nav-justied added and icon added -->
+            <ul class="nav nav-pills nav-justified" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#mostRelevant" >Most relevant</a>
+                <a class="nav-link fa fa-star active" data-toggle="pill" href="#mostRelevant">Relevant</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#mostReads">Most reads</a>
+                <a class="nav-link fa fa-star" data-toggle="pill" href="#mostReads">Read</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#mostDownloads">Most downloads</a>
+                <a class="nav-link fa fa-star" data-toggle="pill" href="#mostDownloads">Download</a>
               </li>
             
             </ul>

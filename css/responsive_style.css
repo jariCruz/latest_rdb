@@ -41,6 +41,14 @@
     }
 }
 
+@media (max-width: 575px){
+
+    .sm-show {
+
+        display: block;
+    }
+}
+
 
 
 @media (max-width: 599px){
@@ -76,6 +84,7 @@
     }
 
 }
+
 
 
 @media (max-width: 767px){
