@@ -915,7 +915,8 @@ include "php/server.php";
             <!-- <span>&ThickSpace;&ThickSpace;</span> -->
 
             <!-- <div> -->
-              <!-- <a href="#"><?php// echo '<u>'.$mostViewed[3].'</u>'; ?></a> -->
+            <!-- Add '/' on line 919 col 33 -->
+              <!-- <a href="#"></?php// echo '<u>'.$mostViewed[3].'</u>'; ?></a> -->
             <!-- </div> -->
             <!-- </ul> -->
 
@@ -949,28 +950,30 @@ include "php/server.php";
     <div class="container">
       <div class="row">
         <div class="col-md-8 ft">
+          <!-- data tooltip added -->
           <p style="margin-top: -1%">Copyright © 2020 Research DB. All rights reserved.<br>
             We use cookies to help provide and enhance our service and tailor content.<br>
-            By continuing you, agree to our <a href="#">Cookies Settings</a>.</p><br>
+            By continuing you, agree to our <a href="#" data-toggle="Please bare with us, this link is still on-progress..">Cookies Settings</a>.</p><br>
 
           <div style="margin-top: -4%;">
-            <a href="#">Copyright</a>
+            <a href="#" data-toggle="tooltip" title="Please bare with us, this link is still on-progress..">Copyright</a>
             <span class="px-3">|</span>
 
-            <a href="#">Terms of Use</a>
+            <a href="#" data-toggle="tooltip" title="Please bare with us, this link is still on-progress..">Terms of Use</a>
             <span class="px-3">|</span>
 
-            <a href="#">Privacy Policy</a>
+            <a href="#" data-toggle="tooltip" title="Please bare with us, this link is still on-progress..">Privacy Policy</a>
 
           </div>
         </div>
 
         <div class="col-md-4 l-mt sm-mt">
           <span>Follow us on:</span><br>
-
-          <span class="fa fa-facebook-official sl"></span>
-          <span class="fa fa-instagram sl px-3"></span>
-          <span class="fa fa-twitter-square sl"></span>
+          
+          <!-- Follow us link fixed -->
+          <a href="https://www.facebook.com/bulsuofficial" class="fa fa-facebook-official sl" data-toggle="tooltip" title="Go to our official facebook page"></a>
+          <a href="#" class="fa fa-instagram sl px-3" data-toggle="tooltip" title="Instragam link is coming soon..."></a>
+          <a href="#" class="fa fa-twitter-square sl" data-toggle="tooltip" title="Twitter link is coming soon..."></a>
         </div>
 
       </div>
