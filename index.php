@@ -877,48 +877,49 @@ include "php/server.php";
 
 
         <!-- Most search keywords -->
-
-       <!--  <div class="container-fluid">
-          <div class="row"> -->
+        <!-- container fluid change to container -->
+        <!-- ml-0 and w-50 added -->
+        <div class="container ml-0 w-50">
+          <div class="row">
 
             <?php  
-            // $sql = "SELECT Title FROM researchstudy_table ORDER BY Views DESC";
-            // $result = $conn->query($sql);
-            // $mostViewed = array();
-            // $x = 0;
+            $sql = "SELECT Title FROM researchstudy_table ORDER BY Views DESC";
+            $result = $conn->query($sql);
+            $mostViewed = array();
+            $x = 0;
 
-            // if ($result->num_rows > 0) {
-            //   // output data of each row
-            //   while ($row = $result->fetch_assoc()) {
-            //   $x++;
-            //   $mostViewed[$x] = $row['Title'];
-            //   }
-            // } else {
-            //   echo "0 results";
-            // }
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while ($row = $result->fetch_assoc()) {
+              $x++;
+              $mostViewed[$x] = $row['Title'];
+              }
+            } else {
+              echo "0 results";
+            }
             ?>
-            <!-- <h6 class="mr-2">Most Viewed:</h6>
+            <h6 class="mr-2">Most searched:</h6>
 
-            
+            <!-- Hoverable links added -->
             <div>
-              <a href="#"><?php //echo '<u>'.$mostViewed[1].'</u>'; ?></a>
+              <a href="#" class="hover-most-search1">Info&nbsp;<span class="other-infos1">other infosss...</span></a>
             </div>
 
-            Margin changed to space -->
-            <!-- <span>&ThickSpace;&ThickSpace;</span> -->
+            <!-- Margin changed to space -->
+            <span>&ThickSpace;&ThickSpace;</span>
 
-            <!-- <div> -->
-              <!-- <a href="#"><?php //x`echo '<u>'.$mostViewed[2].'</u>'; ?></a> -->
-            <!-- </div> -->
+            <div>
+            <a href="#" class="hover-most-search2">Info&nbsp;<span class="other-infos2">other infosss...</span></a>
+            </div>
 
             <!-- Margin changed to space -->
-            <!-- <span>&ThickSpace;&ThickSpace;</span> -->
+            <span>&ThickSpace;&ThickSpace;</span>
 
-            <!-- <div> -->
-            <!-- Add '/' on line 919 col 33 -->
-              <!-- <a href="#"></?php// echo '<u>'.$mostViewed[3].'</u>'; ?></a> -->
-            <!-- </div> -->
-            <!-- </ul> -->
+            <div>
+              <a href="#" class="hover-most-search3">Info&nbsp;<span class="other-infos3">other infosss...</span></a>
+              <!-- <a href="#"><?php echo '<u>'.$mostViewed[3].'</u>'; ?></a> -->
+            </div>
+            </ul>
 
 
 
@@ -992,6 +993,31 @@ include "php/server.php";
                     location.href="php/search_page.php?page=1&query="+ui.item.value;
             }
         });
+    });
+
+
+    // Hoverable most search
+
+    $(document).ready(function(){
+
+    // First link
+    
+    $(".other-infos1").css("display", "none");
+    $(".hover-most-search1").hover(function(){$(".other-infos1").css("display", "inline");},
+                                  function(){$(".other-infos1").css("display", "none");});
+
+
+    // Second link
+    $(".other-infos2").css("display", "none");
+    $(".hover-most-search2").hover(function(){$(".other-infos2").css("display", "inline");},
+                                  function(){$(".other-infos2").css("display", "none");});
+
+
+    // Third link
+    $(".other-infos3").css("display", "none");
+    $(".hover-most-search3").hover(function(){$(".other-infos3").css("display", "inline");},
+                                  function(){$(".other-infos3").css("display", "none");});
+
     });
     </script>
     <!-- sweet alert -->
