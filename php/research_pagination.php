@@ -45,13 +45,124 @@
         if (mysqli_num_rows($count_result) === 0) {
           echo '';
         } else { ?>
-          <!-- Filter Department -->
-                <label>Filter Department:</label>
-    
-                <br>
+          <!-- Filter changed -->
+                <div class="row">
+                    <!-- br for see list -->
+                    <br>
 
-                <!-- Checkboxes removed -->
-                <!-- select tag here -->
+
+                  <!-- Checkboxes for Adviser added -->
+                  <div class="col">
+
+                    <div class="mt-4">
+                      <label>ADVISER</label>
+                    </div>
+
+
+                    <br>
+                      <input type="checkbox" name="filter_checkbox_adviser1" id="filter_checkbox_adviser1">
+                      <label for="filter_checkbox_adviser1" id="filter_label_adviser1">Von, Webster&nbsp;(10)</label>
+
+
+                    <br>
+                      <input type="checkbox" name="filter_checkbox_adviser2" id="filter_checkbox_adviser2">
+                      <label for="filter_checkbox_adviser2" id="filter_label_adviser2">Santos, Noel&nbsp;(9)</label>
+
+                    <br>
+                      <input type="checkbox" name="filter_checkbox_adviser3" id="filter_checkbox_adviser3">
+                      <label for="filter_checkbox_adviser3" id="filter_label_adviser3">Cruz, Jari&nbsp;(3)</label>
+                    <br>
+
+                    
+                    <div id="more_adviser" class="more_filter">
+                      <input type="checkbox" name="filter_checkbox_adviser4" id="filter_checkbox_adviser4" class="mb-3">
+                      <label for="filter_checkbox_adviser4" id="filter_label_adviser4" class="mb-3">Ferrer, Deng deng&nbsp;(2)</label>
+                      <br>
+
+                      <input type="checkbox" name="filter_checkbox_adviser5" id="filter_checkbox_adviser5">
+                      <label for="filter_checkbox_adviser4" id="filter_label_adviser5">Gomera, Lylyn&nbsp;(1)</label>
+                      <br>
+                    </div>
+                    
+
+                    <br>
+                    <button type="button" class="btn btn-outline-primary" id="adviser_btn" onclick="seeFilter('adviser_btn', 'more_adviser')">See more</button>
+                  </div>
+
+                  <!-- Checkboxes for year added -->
+                  <div class="col-7 ">
+                    <hr class="sm-hide">
+
+                    <label class="mt-4">YEAR</label>
+                    <br>
+
+
+                    <br>
+                      <input type="checkbox" name="filter_checkbox_year1" id="filter_checkbox_year1">
+                      <label for="filter_checkbox_year1" id="filter_label_year1">2014&nbsp;(1)</label>
+
+
+                    <br>
+                      <input type="checkbox" name="filter_checkbox_year2" id="filter_checkbox_year2">
+                      <label for="filter_checkbox_year2" id="filter_label_year2">2015&nbsp;(5)</label>
+                    
+
+                    <br>
+                      <input type="checkbox" name="filter_checkbox_year3" id="filter_checkbox_year3">
+                      <label for="filter_checkbox_year3" id="filter_label_year3">2016&nbsp;(9)</label>
+
+
+                    <div id="more_year" class="more_filter">
+                      <input type="checkbox" name="filter_checkbox_year4" id="filter_checkbox_year4" class="mb-3">
+                      <label for="filter_checkbox_year4" id="filter_label_year4" class="mb-3">2017&nbsp;(9)</label>
+                      <br>
+
+                      <input type="checkbox" name="filter_checkbox_year5" id="filter_checkbox_year5">
+                      <label for="filter_checkbox_year4" id="filter_label_year5">2018&nbsp;(9)</label>
+                      <br>
+                    </div>
+                                    
+
+                    <br>
+                    <button type="button" class="btn btn-outline-primary" id="year_btn" onclick="seeFilter('year_btn', 'more_year')">See more</button>
+                  </div>
+
+
+                <!-- row -->
+                </div>
+
+                <!-- Checkboxes for Course added -->
+                <div>
+                  <hr class="sm-hide">
+
+                  <div class="mt-4">
+                    <label>COURSE</label>
+                  </div>
+
+
+                  <br>
+                    <input type="checkbox" name="filter_checkbox_author1" id="filter_checkbox_author1">
+                    <label for="filter_checkbox_author1" id="filter_label_author1">BSIT&nbsp;(10)</label>
+                  <br>
+                  
+                  <div id="more_course" class="more_filter">
+                    <input type="checkbox" name="filter_checkbox_course2" id="filter_checkbox_course2" class="mb-3">
+                    <label for="filter_checkbox_course2" id="filter_label_course2" class="mb-3">EDUC&nbsp;(2)</label>
+                    <br>
+
+                    <input type="checkbox" name="filter_checkbox_course3" id="filter_checkbox_course3">
+                    <label for="filter_checkbox_course3" id="filter_label_course3">BM&nbsp;(1)</label>
+                    <br>
+                  </div>
+                  
+
+                  <br>
+                  <button type="button" class="btn btn-outline-primary" id="course_btn" onclick="seeFilter('course_btn', 'more_course')">See more</button>
+                </div>
+                
+
+                <script src="../js/moreFilter_function.js"></script>
+                
 
         <?php } ?>
 
