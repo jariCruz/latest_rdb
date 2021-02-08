@@ -54,7 +54,8 @@
 
                     ?>
                     <!-- first column -->
-                        <div class="col-sm-3 sm-hide">
+                    <!-- sm-hide remove -->
+                        <div class="col-sm-3">
 
                             <p><?php if (mysqli_num_rows($result_student) > 0) { 
                             echo mysqli_num_rows($result_student);
@@ -63,57 +64,87 @@
                             } ?> Results</p>
                             <hr>
 
-                            <!-- Account Status -->
-                            <label>Account Status:</label>
-                            <div class="dropdown dropright">
-                                <button class="btn btn-outline-secondary dropdown-toggle 
-                                        mw-btn-150p" id="studentAccountStatus" data-toggle="dropdown">Select</button>
+                            <div class="row">
+                                <!-- Filter Course change -->
+                                <!-- Checkboxes for Course added -->
+                                <div class="col-7">
 
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentAccountStatus', 'Pending')">Pending</a>
+                                    <div class="mt-4">
+                                        <label>COURSE</label>
+                                    </div>
 
-                                    <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentAccountStatus', 'Verified')">Verified</a>
 
-                                    <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentAccountStatus', 'Denied')">Denied</a>
+                                    <br>
+                                        <input type="checkbox" name="filter_checkbox_course1" id="filter_checkbox_course1">
+                                        <label for="filter_checkbox_course1" id="filter_label_course1">BSIT&nbsp;(10)</label>
+                                    <br>
 
+                                    <div id="admin_more_course" class="more_filter">
+                                        <input type="checkbox" name="filter_checkbox_course2" id="filter_checkbox_course2" class="mb-3">
+                                        <label for="filter_checkbox_course2" id="filter_label_course2" class="mb-3">EDUC&nbsp;(2)</label>
+                                        <br>
+
+                                        <input type="checkbox" name="filter_checkbox_course3" id="filter_checkbox_course3">
+                                        <label for="filter_checkbox_course3" id="filter_label_course3">BM&nbsp;(1)</label>
+                                        <br>
+                                    </div>
+
+
+                                    <br>
+                                    <button type="button" class="btn btn-outline-primary" id="admin_course_btn" onclick="seeFilter('admin_course_btn', 'admin_more_course')">See more</button>
+                                    
+                                    <script src="../js/moreFilter_function.js"></script>
                                 </div>
 
+                                <div class="col row">
 
-                            </div>
+                                    <div class="col mt-3">
+
+                                        <!-- Account Status -->
+                                        <label>Account Status:</label>
+                                        <div class="dropdown dropright">
+                                            <button class="btn btn-outline-secondary dropdown-toggle 
+                                                    mw-btn-150p" id="studentAccountStatus" data-toggle="dropdown">Pending</button>
+
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentAccountStatus', 'Pending')">Pending</a>
+
+                                                <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentAccountStatus', 'Verified')">Verified</a>
+
+                                                <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentAccountStatus', 'Denied')">Denied</a>
+
+                                            </div>
 
 
-                            <br>
+                                        </div>
+                                    </div>
 
-                            <!-- Sort name -->
-                        <?php if(mysqli_num_rows($result_student) !== 0){ ?>
-                            <label class="mt-2 mb-2">Sort Name:</label>
+                                    <!-- br changed to mt-3 -->
+                                    <div class="col-8 mt-3">
+                                        <!-- Sort name -->
+                                        <?php if(mysqli_num_rows($result_student) !== 0){ ?>
+                                        <label>Sort Name:</label>
 
 
-                            <div class="dropdown dropright">
-                                <button class="btn btn-outline-secondary dropdown-toggle
-                                        mw-btn-150p" id="studentSort" data-toggle="dropdown">Select</button>
+                                        <div class="dropdown dropright">
+                                            <button class="btn btn-outline-secondary dropdown-toggle
+                                                    mw-btn-150p" id="studentSort" data-toggle="dropdown">Ascending</button>
 
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentSort', 'Ascending')">Ascending</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentSort', 'Ascending')">Ascending</a>
 
-                                    <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentSort', 'Descending')">Descending</a>
+                                                <a class="dropdown-item" href="#" onclick="changeBtnTxt('studentSort', 'Descending')">Descending</a>
 
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                <!-- row -->
                                 </div>
-
                             </div>
-
-                            <br>
-
-                            <!-- Filter Department -->
-                            <label>Filter Course:</label>
-
-                            <br>
-                            <input type="checkbox" id="bsit">
-                            <label for="#bsit">BSIT</label>
-
-                            <br>
-                            <input type="checkbox" id="educ">
-                            <label for="#educ">EDUC</label>
+                            
+                            <!-- hr added and br remove -->
+                            <hr class="sm-show">
 
                         <?php }else { echo ''; } ?>
 
@@ -125,7 +156,8 @@
                     <div class="col">
                         <?php
                         if (mysqli_num_rows($result_student) > 0) { ?>
-                            <p>Student Pending...</p>
+                            <!-- header-font added -->
+                            <p class="header-font">Student Pending...</p>
                             <hr>
 
                         <?php while ($row_student = mysqli_fetch_array($result_student)) { ?>
