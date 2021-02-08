@@ -953,13 +953,13 @@ include "php/server.php";
           <!-- data tooltip added -->
           <p style="margin-top: -1%">Copyright © 2020 Research DB. All rights reserved.<br>
             We use cookies to help provide and enhance our service and tailor content.<br>
-            By continuing you, agree to our <a href="#" data-toggle="Please bare with us, this link is still on-progress..">Cookies Settings</a>.</p><br>
+            By continuing you, agree to our <a href="#" data-toggle="tooltip" title="Please bear with us, this link is still on-progress..">Cookies Settings</a>.</p><br>
 
           <div style="margin-top: -4%;">
-            <a href="#" data-toggle="tooltip" title="Please bare with us, this link is still on-progress..">Copyright</a>
+            <a href="#" data-toggle="tooltip" title="Please bear with us, this link is still on-progress..">Copyright</a>
             <span class="px-3">|</span>
 
-            <a href="#" data-toggle="tooltip" title="Please bare with us, this link is still on-progress..">Terms of Use</a>
+            <a href="#" data-toggle="tooltip" title="Please bear with us, this link is still on-progress..">Terms of Use</a>
             <span class="px-3">|</span>
 
             <a href="#" data-toggle="tooltip" title="Please bare with us, this link is still on-progress..">Privacy Policy</a>
@@ -972,8 +972,8 @@ include "php/server.php";
           
           <!-- Follow us link fixed -->
           <a href="https://www.facebook.com/bulsuofficial" class="fa fa-facebook-official sl" data-toggle="tooltip" title="Go to our official facebook page"></a>
-          <a href="#" class="fa fa-instagram sl px-3" data-toggle="tooltip" title="Instragam link is coming soon..."></a>
-          <a href="#" class="fa fa-twitter-square sl" data-toggle="tooltip" title="Twitter link is coming soon..."></a>
+          <a href="#" class="fa fa-instagram sl px-3" data-toggle="tooltip" title="The instragam link is coming soon..."></a>
+          <a href="#" class="fa fa-twitter-square sl" data-toggle="tooltip" title="The twitter link is coming soon..."></a>
         </div>
 
       </div>
