@@ -19,16 +19,14 @@ body {
 /* Background image */
 .bg {
     /* The image used */
-    background-image: url("../img/background5.jpg");
+    /* Background modified */
+    background-image: url("../img/background7.jpg");
 
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: left;
+    background-position: top left;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-attachment: fixed;
     
+
 }
 
 .dropdown-menu {
